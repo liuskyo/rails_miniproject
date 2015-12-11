@@ -1,0 +1,2 @@
+class BendonController < ApplicationController
+end
