@@ -1,7 +1,8 @@
 class CreateBendons < ActiveRecord::Migration
   def change
     create_table :bendons do |t|
-      t.stringaddress :store
+      t.string :store
+      t.string :address
       t.string :phone_number
       t.text :description
 

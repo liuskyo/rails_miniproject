@@ -1,0 +1,31 @@
+<h1>便當店資訊</h1>
+
+<table>
+	<% @bendons.each do |b| %>
+
+	<tr>
+		<td>
+			<%=b.store%>
+		</td>
+		 <td>
+		 	<%= link_to "詳細資訊",bendon_path(b)%>
+		 	<%= link_to "Get XML",bendon_path(b)%>
+		 	<%= link_to "Get JSON",bendon_path(b)%>
+		 	<%= link_to "　編輯",edit_bendon_path(b)%>
+		 	<%= link_to "刪除",bendon_path(b),:method=>:delete%>
+		 </td>
+	</tr>
+	<%end%>
+</table>
+
+<%= link_to "新增",new_bendon_path%>
+<%= link_to "Atom feed",bendons_path(:format=>:atom)%>
+
+
+
+
+
+
+
+
+</table>

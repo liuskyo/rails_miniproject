@@ -1,0 +1,12 @@
+<%= form_for @bendon, :url => bendons_path do |f| %>
+    <%= f.label :store, "商店名稱" %>
+    <%= f.text_field :store %>
+
+    <%= f.label :address, "地址" %>
+    <%= f.text_field :address %>
+
+    <%= f.label :phone_number,"電話號碼"%>
+    <%=f.text_field :phone_number%>
+
+    <%= f.submit "新增" %>
+<% end %>
