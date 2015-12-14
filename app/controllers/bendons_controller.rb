@@ -1,6 +1,6 @@
 class BendonsController < ApplicationController
 		def index
-		@bendons=Bendon.all
+		@bendons=Bendon.page(params[:page]).per(10)
 
 		respond_to do |format|
 			format.html
