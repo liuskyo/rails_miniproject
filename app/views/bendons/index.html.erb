@@ -11,7 +11,7 @@
 		 	<%= link_to "詳細資訊",bendon_path(b),:class=>"btn btn-primary"%>
 		 	<%= link_to "Get XML",bendon_path(b,:format=>:xml),:class=>"btn btn-default"%>
 		 	<%= link_to "Get JSON",bendon_path(b,:format=>:json),:class=>"btn btn-default"%>
-		 	<%= link_to "　編輯",edit_bendon_path(b),:class=>"btn btn-default"%>
+		 	<%= link_to "　編輯",bendons_path({:b=>b}),:class=>"btn btn-default"%>
 		 	<%= link_to "刪除",bendon_path(b),:method=>:delete,:class=>"btn btn-danger"%>
 		 </td>
 	</tr>
@@ -24,8 +24,15 @@
 
 <%= paginate @bendons %>
 
+<%if params[:b]%>
+<%url=bendon_path(@bendon)%>
+<%else%>
+<%url=bendons_path%>
+<%end%>
 
-<%= form_for @bendon, :url => bendons_path do |f| %>
+
+
+<%= form_for @bendon, :url => url do |f| %>
     <%= f.label :store, "商店名稱" %>
     <%= f.text_field :store %>
 

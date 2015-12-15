@@ -1,6 +1,12 @@
 class BendonsController < ApplicationController
+		
 		def index
-		@bendon=Bendon.new	
+			if params[:b]
+				@bendon=Bendon.find(params[:b])
+			else
+				@bendon=Bendon.new
+			end
+
 		@bendons=Bendon.page(params[:page]).per(10)
 
 		respond_to do |format|
@@ -28,9 +34,9 @@ class BendonsController < ApplicationController
 		
 	end
 
-	def new
-		@bendon=Bendon.new
-	end
+	# def new
+	# 	@bendon=Bendon.new
+	# end
 
 
 	def create
