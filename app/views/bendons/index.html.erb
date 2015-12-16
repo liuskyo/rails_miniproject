@@ -12,7 +12,7 @@
 		 	<%= link_to "Get XML",bendon_path(b,:format=>:xml),:class=>"btn btn-default"%>
 		 	<%= link_to "Get JSON",bendon_path(b,:format=>:json),:class=>"btn btn-default"%>
 		 	<%= link_to "　編輯",bendons_path({:b=>b}),:class=>"btn btn-default"%>
-		 	<%= link_to "刪除",bendon_path(b),:method=>:delete,:class=>"btn btn-danger"%>
+		 	<%= link_to "刪除",bendon_path(b,:page=>params[:page]),:method=>:delete,:class=>"btn btn-danger"%>
 		 </td>
 	</tr>
 	<%end%>

@@ -51,6 +51,7 @@ class BendonsController < ApplicationController
 
 	def edit
 		@bendon=Bendon.find(params[:id])
+		
 	end
 
 	def update
@@ -59,10 +60,10 @@ class BendonsController < ApplicationController
 		redirect_to bendon_path(@bendon)		
 	end
 
-		def destroy
+	def destroy
 		@bendon=Bendon.find(params[:id])
 		@bendon.destroy
-		redirect_to bendons_path
+		redirect_to bendons_path(:page => params[:page])
 	end
 
 private
